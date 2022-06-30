@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "starwars1";
+  src: url("../fonts/starwars-font-1.woff") format('woff');
+}
+@font-face {
+  font-family: "starwars2";
+  src: url("../fonts/starwars-font-2.woff") format('woff');
+}
+@font-face {
+  font-family: "starwars3";
+  src: url("../fonts/starwars-font-3.woff") format('woff');
+}
+@font-face {
+  font-family: "starwars4";
+  src: url("../fonts/starwars-font-4.woff") format('woff');
+}
+@font-face {
+  font-family: "starwars5";
+  src: url("../fonts/starwars-font-5.woff") format('woff');
+}
+
+body{
+  background-color: #0A0B0B;
+  color:#ccc;
+  font-family: starwars1;
+}
+
+h1, h2, h4, h5, h6{
+  font-family: starwars1;
+  text-transform: uppercase;
+}
+header{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem 0;
+}
+header div{
+  align-self: center;
+}
+header img{
+  width: 200px;
+}
+header .center{
+  text-align: center;
+}
+nav{
+  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
+  color: #999;
+  font-family: starwars2;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+nav ul{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+nav li{
+  list-style-type: none;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+nav li:last-child{
+  list-style-type: none;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+nav li a{
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  border-left: 1px solid #333;
+  text-decoration: none;
+  color: #999;
+}
+nav li a.active span.horizontal-bar{
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #006FEA;
+  box-shadow: 0 0 14px 1px;
+  bottom: 0px;
+  left: 0px;
+}
+nav li:last-child a{
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;  
+}
+
+.starwars2{
+  font-family: starwars2;
+}
+.starwars3{
+  font-family: starwars3;
+}
+.starwars4{
+  font-family: starwars4;
+}
+.starwars5{
+  font-family: starwars5;
+}
+
+.menu{
+  font-family: starwars2;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #999;
+}
+.user{
+  font-family: starwars2;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 1.2px;
+  text-align: right;
+
+}
+.user span{
+  font-size: 16px;
+  color: #343434;
+}
+.active{
+  color: #ccc;
+}
+.startship-el{
+  font-family: starwars5;
+  max-width: 1200px;
+  background-color: #151515;
+  border: 1px solid #151515;
+  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.startship-el.special{
+  opacity: 1;
+  animation-name: light-efect;
+  animation-duration: 3s;
+  animation-fill-mode: none;
+}
+.startship-el h3{
+  font-size: 1.5rem;
+}
+.startship-el h3, .startship-el p{
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+.startship-el:hover{
+  border: 1px solid #419a5a;
+  background-color: #222;
+  box-shadow: 0 0 14px 1px;
+  cursor: pointer;
+}
+.loading-box{
+  display: flex;
+  justify-content: center;
+}
+.loading{
+  width: 2px;
+  height: 0px;
+  border: 1px solid #419a5a;
+  box-shadow: 0 0 14px 1px;
+  margin: 1rem;
+  animation-name: loading;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+@keyframes loading {
+  0%, 100% {width: 2px; border-color: #419a5a}
+  25%, 75% {border-color: #006FEA;}
+  50% {width: 100px; border-color: #ffaaaa}
+}
+
+@keyframes show {
+  0%    {opacity: 0;}
+  100%  {opacity: 1;} 
+}
+
+@keyframes light-efect {
+  0%    {opacity: 0;}
+  50%  {opacity: 1;} 
+  56%, 63%, 66%, 73%, 76%, 100%  {
+    background-color: #151515;
+    border: 1px solid #151515;
+    box-shadow: none;
+    opacity: 1;
+  }
+  65%, 67%, 75%, 77% {  
+    border: 1px solid #419a5a;
+    background-color: #222;
+    box-shadow: 0 0 14px 1px;
+    opacity: 1;
+  }
+
+}
