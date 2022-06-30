@@ -1,13 +1,27 @@
 import { useEffect, useState } from 'react'
 import axios from "axios"
+import useLocalStorage from './useLocalStorage'
 
 export default function useStarshipFetch(pageNumber){
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
-  const [starships, setStarships] = useState([])
-  const [hasMore, setHasMore] = useState(false)
+  const [loading, setLoading] = useLocalStorage("useStarshipFetch-loading", true)
+  const [error, setError] = useLocalStorage("useStarshipFetch-error",false)
+  const [list, setList] = useState(() => {
+    try {
+      const item = window.localStorage.getItem("useStarshipFetch-list");
+      return item ? JSON.parse(item) : [];
+    } catch (error) {
+      return [];
+    }
+  })
+  const [hasMore, setHasMore] = useLocalStorage("useStarshipFetch-hasMore",true)
+
+  useEffect(() => 
+    window.localStorage.setItem("useStarshipFetch-list", JSON.stringify(list)),
+    [list]
+  )
 
   useEffect(() => {
+    if(!hasMore) return;
     setLoading(true)
     setError(false)
     let cancel
@@ -17,7 +31,7 @@ export default function useStarshipFetch(pageNumber){
       params: { page: pageNumber },
       cancelToken: new axios.CancelToken(c => cancel = c)
     }).then(res => {
-      setStarships(prevStarships => {
+      setList(prevStarships => {
         return [...prevStarships, ...res.data.results]
       })
       setHasMore(res.data.next ? true : false)
@@ -27,7 +41,8 @@ export default function useStarshipFetch(pageNumber){
       setError(true)
     })
     return () => cancel()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageNumber])
 
-  return { loading, error, starships, hasMore }  
+  return { loading, error, list, hasMore }  
 }
