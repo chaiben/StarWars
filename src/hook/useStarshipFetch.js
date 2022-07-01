@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from "axios"
 import useLocalStorage from './useLocalStorage'
+import { API_URL } from '../variables'
 
 export default function useStarshipFetch(pageNumber){
   const [loading, setLoading] = useLocalStorage("useStarshipFetch-loading", true)
@@ -27,7 +28,7 @@ export default function useStarshipFetch(pageNumber){
     let cancel
     axios({
       method: 'GET',
-      url: 'https://swapi.dev/api/starships/',
+      url: API_URL,
       params: { page: pageNumber },
       cancelToken: new axios.CancelToken(c => cancel = c)
     }).then(res => {

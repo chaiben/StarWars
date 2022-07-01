@@ -1,4 +1,4 @@
-import { useCallback, useRef, Fragment } from "react";
+import { useCallback, useRef } from "react";
 import useLocalStorage from "../hook/useLocalStorage";
 import useStarshipFetch from "../hook/useStarshipFetch";
 import Loading from "./Loading";
@@ -25,7 +25,7 @@ export default function ViewStarships(props){
   }, [starships.loading, starships.hasMore, pageNumber]);
   
   return(
-    <Fragment>
+    <div className="container">
     { starships.list && starships.list.map(
     (starship, index) => {
       let classAux = (index === 1) ? "special" : "";
@@ -51,6 +51,6 @@ export default function ViewStarships(props){
     })}
   <div>{starships.loading && <Loading />}</div>
   <div>{starships.error && 'Error'}</div>
-  </Fragment>
+  </div>
   )
 }

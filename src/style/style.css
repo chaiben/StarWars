@@ -25,6 +25,11 @@ body{
   font-family: starwars1;
 }
 
+.container{
+  margin: auto;
+  max-width: 1200px;
+}
+
 h1, h2, h4, h5, h6{
   font-family: starwars1;
   text-transform: uppercase;
@@ -125,7 +130,6 @@ nav li:last-child a{
 }
 .startship-el{
   font-family: starwars5;
-  max-width: 1200px;
   background-color: #151515;
   border: 1px solid #151515;
   padding: 0.5rem 1rem;
@@ -169,6 +173,44 @@ nav li:last-child a{
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
+.show{
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.starship-view{
+  display: flex;
+  flex-direction: row;
+}
+.starship-view .left{
+  width: 40%;
+}
+.left {
+  margin: 3rem 1rem 3rem 0rem;
+}
+
+.right{
+  margin: 3rem 0rem 3rem 1rem;
+}
+.starship-img{
+  aspect-ratio: auto 6 / 4;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100%;
+}
+.error{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+}
+.error h3{
+  text-align: center;
+  padding-top: 1rem;
+}
+
 @keyframes loading {
   0%, 100% {width: 2px; border-color: #419a5a}
   25%, 75% {border-color: #006FEA;}
