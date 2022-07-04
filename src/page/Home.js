@@ -1,7 +1,4 @@
-import { Fragment } from "react"
 import { Link } from "react-router-dom";
-// import starshipGif1 from "../assets/starship1.gif"
-// import starshipGif2 from "../assets/starship2.gif"
 import starshipGif3 from "../assets/starship3.gif"
 
 export default function Home(){
