@@ -3,11 +3,15 @@ import logo from "../assets/sw_logo.png";
 import SignUpForm from "./SignUpForm";
 import LogInForm from "./LogInForm";
 import useLocalStorage from "../hook/useLocalStorage"
+import LoginSignUp from "./LoginSignUp";
+import LoggedMenu from "./LoggedMenu";
 
-export default function Header(){
+export default function Header(props){
   const [showSignUp, setShowSignUp] = useState(false)
   const [showLogIn, setShowLogIn] = useState(false)
   const [accounts, setAccounts] = useLocalStorage("Header-accounts", [])
+  const {currentUser, setCurrentUser} = props
+  const authUser = (currentUser) ? true : false
 
   // Remove scrolling when popup is open
   useEffect(()=>{
@@ -21,20 +25,18 @@ export default function Header(){
       <div></div>
       <div className="center"><img src={logo} alt="Star Wars Logo" /></div>
       <div className="user">
-      <span className="menu-button" onClick={()=>setShowLogIn(true)}>Log in</span>
-      {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
-      <span className="breaker"> // </span>
-      <span className="menu-button" onClick={()=>setShowSignUp(true)}>Sign up</span>
+      {!authUser && <LoginSignUp setShowLogIn={setShowLogIn} setShowSignUp={setShowSignUp} />}
+      {authUser && <LoggedMenu name={currentUser.firstName} setCurrentUser={setCurrentUser} />}
       </div>
       {showLogIn && <LogInForm 
-        accounts={accounts} 
-        setAccounts={setAccounts} 
-        closeHandler={()=>setShowLogIn(false)} 
+        accounts={accounts}
+        closeHandler={()=>setShowLogIn(false)}
+        setCurrentUser={setCurrentUser}
       />}
       {showSignUp && <SignUpForm 
-        accounts={accounts} 
-        setAccounts={setAccounts} 
-        closeHandler={()=>setShowSignUp(false)} 
+        accounts={accounts}
+        setAccounts={setAccounts}
+        closeHandler={()=>setShowSignUp(false)}
       />}
     </header>
 

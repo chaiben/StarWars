@@ -5,7 +5,7 @@ import PopupHeader from "./PopupHeader";
 import { Fail, Success } from "./Styled";
 
 export default function LogInForm(props){
-  const {accounts, setAccounts} = props
+  const {accounts} = props
   const [success, setSuccess] = useState(false);
   const [fail, setFail] = useState(false);
   const initialFormData = {
@@ -34,8 +34,8 @@ export default function LogInForm(props){
     for (let i = 0; i < accounts.length; i++) {
       const account = accounts[i];
       if(account.email === formData.email && account.password === formData.password){
+        props.setCurrentUser(account);
         setSuccess(true)
-        console.log(account)
         return
       }
     }
