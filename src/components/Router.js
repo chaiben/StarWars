@@ -6,7 +6,8 @@ import Header from './Header';
 import Nav from './Nav';
 import Starships from './Starships';
 
-const Router = () => (
+const Router = () => {
+return (
 <BrowserRouter>
     <Header />
     <Nav />
@@ -18,5 +19,5 @@ const Router = () => (
         <Route path="*" element={<div>404</div> } />
     </Routes>
 </BrowserRouter>
-);
+)};
 export default Router;

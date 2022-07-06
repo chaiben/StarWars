@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import logo from "../assets/sw_logo.png";
 import SignUpForm from "./SignUpForm";
 import LogInForm from "./LogInForm";
+import useLocalStorage from "../hook/useLocalStorage"
 
 export default function Header(){
-  const [showSignUp, setShowSignUp] = useState(false);
-  const [showLogIn, setShowLogIn] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(false)
+  const [showLogIn, setShowLogIn] = useState(false)
+  const [accounts, setAccounts] = useLocalStorage("Header-accounts", [])
 
   // Remove scrolling when popup is open
   useEffect(()=>{
@@ -24,8 +26,16 @@ export default function Header(){
       <span className="breaker"> // </span>
       <span className="menu-button" onClick={()=>setShowSignUp(true)}>Sign up</span>
       </div>
-      {showLogIn && <LogInForm closeHandler={()=>setShowLogIn(false)} />}
-      {showSignUp && <SignUpForm closeHandler={()=>setShowSignUp(false)} />}
+      {showLogIn && <LogInForm 
+        accounts={accounts} 
+        setAccounts={setAccounts} 
+        closeHandler={()=>setShowLogIn(false)} 
+      />}
+      {showSignUp && <SignUpForm 
+        accounts={accounts} 
+        setAccounts={setAccounts} 
+        closeHandler={()=>setShowSignUp(false)} 
+      />}
     </header>
 
   );

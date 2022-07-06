@@ -17,54 +17,79 @@ export default function useForm(formName, initialFormData){
     })
   }
 
-  function validFormField(event){
-    const {name, value, required, placeholder} = event.target;
+  function validFormField(element, save){
+    save = save === undefined ? true : save;
+    const {name, value, required, placeholder} = element;
+    let errorFormDataAux = {}
     if(required){
-      value ? 
-      setErrorFormData({
+      value!=='' ? 
+      errorFormDataAux = {
         ...errorFormData,
         [name]: ""
-      }) : 
-      setErrorFormData({
+      } : 
+      errorFormDataAux = {
         ...errorFormData,
         [name]: (placeholder) ? 
          "Please enter your " + placeholder.toLowerCase() :
          "This field is required"
-      })
+      }
     }
-    if(required && !value)
-      return;
-
-    switch (name) {
-      case 'email':
-        (value.match(CHECKEMAIL)) ? 
-        setErrorFormData({
-          ...errorFormData,
-          [name]: ""
-        }) : 
-        setErrorFormData({
-          ...errorFormData,
-          [name]: "Invalid email format"
-        })
-        break;
-      case 'password':
-        (value.match(CHECKPASSWORD2)) ? 
-        setErrorFormData({
-          ...errorFormData,
-          [name]: ""
-        }) : 
-        setErrorFormData({
-          ...errorFormData,
-          [name]: `Your password must have:
-          Minimum of 8 characters;
-          Maximun of 16 characters;
-          A minimum of 1 lower case letter,  1 upper case letter, 1 numeric character and 1 special character. Good luck!`
-        })
-        break;
+    if(value){
+      switch (name) {
+        case 'email':
+          (value.match(CHECKEMAIL)) ? 
+          errorFormDataAux = {
+            ...errorFormData,
+            [name]: ""
+          } : 
+          errorFormDataAux = {
+            ...errorFormData,
+            [name]: "Invalid email format"
+          }
+          break;
+        case 'password':
+          errorFormDataAux = (value.match(CHECKPASSWORD2)) ? 
+          {
+            ...errorFormData,
+            [name]: ""
+          } : 
+          {
+            ...errorFormData,
+            [name]: `Your password must have:
+            Minimum of 8 characters;
+            Maximun of 16 characters;
+            A minimum of 1 lower case letter,  1 upper case letter, 1 numeric character and 1 special character. Good luck!`
+          }
+          break;
+      
+        default:
+          break;
+      }
+    }
+    if(save)
+      setErrorFormData(errorFormDataAux)
+  
+    return errorFormDataAux;
+  }
+  function validateAllForm(){
+    let errorFormDataAux = {}
+    Object.keys(formData).forEach(formName => {
+      const element = document.getElementById(formName);
+      errorFormDataAux = {
+        ...errorFormDataAux,
+        ...validFormField(element, false)
+      }
+    });
+    setErrorFormData(errorFormDataAux);
     
-      default:
-        break;
+    // Check if there is any error enabled
+    const errorValues = Object.values(errorFormDataAux)
+    for (let i = 0; i < errorValues.length; i++) {
+      if(errorValues[i]){
+        return false
+      }
     }
+    return true
   }
 
   return [
@@ -72,6 +97,7 @@ export default function useForm(formName, initialFormData){
     errorFormData, 
     handleChange, 
     validFormField,
+    validateAllForm,
     setFormData, 
     setErrorFormData,
   ]

@@ -8,16 +8,38 @@ from {
 
 to {
   transform: scaleY(1);
-  height: 100%;
+  height: auto;
 }
 `;
+
+export const Success = styled.div`
+  animation: ${showDown} 0.25s ease-in-out forwards;
+  background-color: #419a5a66;
+  border-radius: 3px;
+  border: 1px solid #419a5a;
+  box-shadow: 0 0 14px 1px;
+  color: #ccc;
+  padding: 0.5rem 0;
+  text-align: center;
+  width: 100%;
+`
+export const Fail = styled.div`
+  animation: ${showDown} 0.25s ease-in-out forwards;
+  background-color: #FF000066;
+  border-radius: 3px;
+  border: 1px solid #FF0000;
+  box-shadow: 0 0 14px 1px;
+  color: #ccc;
+  padding: 0.5rem 0;
+  text-align: center;
+  width: 100%;
+`
 
 export const ErrorMessage = styled.p`
   color: red;
   font-size: 0.8rem;
   margin: 0.4rem 0;
-  animation: ${showDown} 0.25s ease-in-out forwards;
- 
+  animation: ${showDown} 0.25s ease-in-out forwards; 
 `
 
 export const FieldContainer = styled.div`

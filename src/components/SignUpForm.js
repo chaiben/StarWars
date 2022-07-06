@@ -1,8 +1,12 @@
+import { useState } from "react";
 import useForm from "../hook/useForm";
 import TextField from "./formElements/TextField";
 import PopupHeader from "./PopupHeader";
+import { Success } from "./Styled";
 
 export default function SignUpForm(props){
+  const {accounts, setAccounts} = props
+  const [success, setSuccess] = useState(false);
   
   const initialFormData = {
     firstName: "",
@@ -16,10 +20,46 @@ export default function SignUpForm(props){
     formData, 
     errorFormData, 
     handleChange, 
-    validFormField
+    validFormField,
+    validateAllForm,
+    setFormData, 
+    setErrorFormData, 
   ] = useForm('SignUpForm', initialFormData);
 
   const passwordType = (formData.showPassword)?'text':'password'
+
+  function submitForm(){
+    if(!validateAllForm())
+      return
+
+    // Check if the email already exist
+    for (let i = 0; i < accounts.length; i++) {
+      const account = accounts[i];
+      if(account.email === formData.email){
+        setErrorFormData(
+          {
+            ...errorFormData,
+            email: `${formData.email} is already registred`
+          }
+        )
+        setSuccess(false)
+        return
+      }
+    }  
+    
+    // Save account
+    setSuccess(true)
+
+    setAccounts((
+      [
+        ...accounts,
+        formData
+      ]
+    ))
+
+    // Clean form
+    setFormData(initialFormData)
+  }
 
   return (
     <div className="popup show1s">
@@ -32,7 +72,7 @@ export default function SignUpForm(props){
         error={errorFormData.firstName}
         id='firstName'
         name='firstName'
-        onBlur={validFormField}
+        onBlur={(e) => validFormField(e.target)}
         onChange={handleChange}
         placeholder='First Name'
         required='1'
@@ -43,7 +83,7 @@ export default function SignUpForm(props){
         error={errorFormData.lastName}
         id='lastName' 
         name='lastName' 
-        onBlur={validFormField}
+        onBlur={(e) => validFormField(e.target)}
         onChange={handleChange}
         placeholder='Last Name'
         required='1'
@@ -54,7 +94,7 @@ export default function SignUpForm(props){
         error={errorFormData.email}
         id='email'
         name='email' 
-        onBlur={validFormField}
+        onBlur={(e) => validFormField(e.target)}
         onChange={handleChange}
         placeholder='Email Address'
         required='1'
@@ -65,7 +105,7 @@ export default function SignUpForm(props){
         error={errorFormData.password}
         id='password' 
         name='password' 
-        onBlur={validFormField}
+        onBlur={(e) => validFormField(e.target)}
         onChange={handleChange}
         placeholder='Password'
         required='1'
@@ -85,7 +125,8 @@ export default function SignUpForm(props){
             Show password
         </label>
       </div>
-      <button>Continue</button>
+      <button onClick={submitForm}>Create Account</button>
+      {success && <Success>User saved</Success>}
       </div>
     </div>
   );
