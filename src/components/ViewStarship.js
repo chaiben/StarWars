@@ -1,17 +1,15 @@
-import { useRef } from "react";
-import { VISUAL_GUIDE_URL } from "../variables";
+import useVisualGuide from "../hook/useVisualGuide";
+import Film from "./Film";
+import Pilot from "./Pilot";
+import { useNavigate } from 'react-router-dom';
 
 export default function ViewStarship(props){
   const starship = props.starship ? props.starship : false;
-  let aux = starship.url.split("/");
-  const starshipCode = useRef(aux[aux.length - 2]);
-  const imgURL = VISUAL_GUIDE_URL + "starships/" + starshipCode.current + ".jpg";
-  const style = {
-    backgroundImage: `url(${imgURL}), url(${VISUAL_GUIDE_URL}big-placeholder.jpg)`,
-  }
+  const {style} = useVisualGuide(starship.url);
+  const navigate = useNavigate();
   return(
     <div className="container show">
-      <div className="starship-view">
+      <div className="starship-view mt1">
         <div className="left">
           <div className="starship-img" style={style}></div>
         </div>
@@ -29,6 +27,23 @@ export default function ViewStarship(props){
           <div><strong>Mimimum Crew: </strong> {starship.crew}</div>
           <div><strong>Passengers: </strong> {starship.passengers}</div>
         </div>
+      </div>
+      <div className="starship-view">
+        <div className="left">
+          {starship.pilots.length > 0 && <h3>Pilots</h3>}
+          <div className="flex gap2">
+            {starship.pilots.map(url => <Pilot key={url} url={url} />)}
+          </div>
+        </div>
+        <div className="right">
+        <h3>Films</h3>
+          <div className="flex gap2">
+            {starship.films.map(url => <Film key={url} url={url} />)}
+          </div>
+        </div>
+      </div>
+      <div className="center mt1 mb1">
+        <button className="blackButton mt1" onClick={()=>navigate(-1)}><span> Back </span></button>
       </div>
     </div>
   )

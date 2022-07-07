@@ -67,3 +67,17 @@ export const Input = styled.input`
     color: #edd700;
   }
 `
+export const ThumbnailBox = styled.div`
+  width: 5rem;
+  height: 6rem;
+  background-position: center;
+  background-size: 100%;
+  border-radius: 3px;
+  border: 2px solid #000;
+  background-repeat: no-repeat;
+  &:hover{
+    cursor: pointer;
+    border: 2px solid #419a5a;
+    box-shadow: 0 0 14px 1px;
+  }
+`

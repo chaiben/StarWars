@@ -25,17 +25,18 @@ body{
   font-family: starwars1;
 }
 button{
-  font-size: 1em;
+  background-color: #484848;
+  border-color: transparent;
   border-radius: 3px;
+  border-radius: 3px;
+  color: #f4f5f5;
+  font-size: 1em;
   height: 40px;
   margin: 0 0 4% 0;
   max-width: inherit;
-  text-shadow: none;
-  border-color: transparent;
-  background-color: #484848;
-  border-radius: 3px;
   padding-top: 0px;
-  color: #f4f5f5;
+  text-shadow: none;
+  width: 100%;
 }
 button:hover{
   background-color: #3f6dac;
@@ -68,18 +69,6 @@ input:not([type='checkbox']):not([type='radio']), select, .toggle .name {
   line-height: 40px;
   padding: 0 15px;
 }
-/* input:not([type="checkbox"]):not([type="radio"]):focus, select:focus, .toggle .name:focus {
-  border: 1px solid #edd700;
-  line-height: 40px;
-  padding: 0 15px;
-  background-color: #484848;
-  color: #edd700;
-}
-input[type=checkbox]{
-  width: 18.795px;
-  height: 18.795px;
-  margin: 0;
-} */
 nav{
   border-bottom: 1px solid #333;
   border-top: 1px solid #333;
@@ -129,9 +118,10 @@ nav li:last-child a{
 }
 .blackButton{
   background: transparent;
-  border: 2px solid white;
   border-radius: 5px;
+  border: 2px solid white;
   color: white;
+  cursor: pointer;
   padding: 0.5rem 1rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -169,6 +159,30 @@ nav li:last-child a{
 .container-checkbox label{
   font-size: 0.8rem;
 }
+.element-img{
+  aspect-ratio: auto 45 / 60;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 3px;
+  max-height: 400px;
+  margin: auto;
+  width: auto;
+}
+.element-view{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.element-view .left{
+  flex-grow: 1;
+}
+.element-view .right{
+  flex-grow: 1;
+}
+.element-view p span{
+  color: white
+}
 .error{
   display: flex;
   justify-content: center;
@@ -180,12 +194,22 @@ nav li:last-child a{
   text-align: center;
   padding-top: 1rem;
 }
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.gap1{
+  gap: 0.5rem;
+}
+.gap2{
+  gap: 1rem;
+}
+.gap3{
+  gap: 3rem;
+}
 .imgHome{
   aspect-ratio: 498 / 204;
   width: 100%;
-}
-.left {
-  margin: 3rem 1rem 3rem 0rem;
 }
 .loading{
   width: 2px;
@@ -212,6 +236,9 @@ nav li:last-child a{
   color: #ccc;
   cursor: pointer;
 }
+.mt0{
+  margin-top: 1rem;
+}
 .mt1{
   margin-top: 3rem;
 }
@@ -222,13 +249,16 @@ nav li:last-child a{
   overflow: hidden;
 }
 .popup{
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  height: 100vh;
+  height: 100%;
   left: 0px;
-  position: absolute;
+  overflow: scroll; 
+  overflow-x: hidden;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
@@ -238,6 +268,7 @@ nav li:last-child a{
   letter-spacing: 2px;
 }
 .popup .popup-content{
+  align-items: center;
   background-color: #181818;
   color: #aaa;
   display: flex;
@@ -262,8 +293,11 @@ nav li:last-child a{
   color: #edd700;
   text-align: center;
 }
-.right{
-  margin: 3rem 0rem 3rem 1rem;
+.relative{
+  position: relative;
+}
+.restricted-image{
+  width: 90%;
 }
 .show{
   opacity: 0;
@@ -322,9 +356,17 @@ nav li:last-child a{
 .starship-view{
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
+}
+.starship-view h1{
+  margin-top: 0.5rem;
 }
 .starship-view .left{
+  margin: 0 1rem 0 0;
   width: 40%;
+}
+.starship-view .right{
+  margin: 0 0 0 1rem;
 }
 .starship-img{
   aspect-ratio: auto 6 / 4;
@@ -372,4 +414,27 @@ nav li:last-child a{
     box-shadow: 0 0 14px 1px;
     opacity: 1;
   }
+}
+@media (max-width: 600px) {
+    .starship-view{
+      flex-direction: column;
+      align-items: center;
+    }
+    .left, 
+    .right{
+      width: 90% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    header{
+      grid-template-columns: 1fr;
+    }
+    .user{
+      text-align: center;
+      margin: 1rem 0 0 0;
+    }
+    .flex{
+      justify-content: center !important;
+      align-items: center;
+    }
 }

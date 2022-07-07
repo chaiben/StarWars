@@ -35,7 +35,7 @@ export default function LogInForm(props){
       const account = accounts[i];
       if(account.email === formData.email && account.password === formData.password){
         props.setCurrentUser(account);
-        setSuccess(true)
+        setSuccess(account.firstName);
         return
       }
     }
@@ -49,7 +49,7 @@ export default function LogInForm(props){
     <div className="popup show1s">
       <div className="popup-content">
         <PopupHeader 
-        title="Enter your email address"
+        title="Log In"
         closeHandler={props.closeHandler} 
         />
         <TextField
@@ -87,8 +87,8 @@ export default function LogInForm(props){
             Show password
         </label>
       </div>
-        <button onClick={submitForm}>Log In</button>
-        {success && <Success>Logged</Success>}
+        <button onClick={submitForm}>Send</button>
+        {success && <Success onClick={props.closeHandler}>Welcome {success} - click to close</Success>}
         {fail && <Fail>Email and password do not match.</Fail>}
       </div>
     </div>
