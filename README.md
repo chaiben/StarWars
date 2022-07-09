@@ -5,7 +5,7 @@
 
 This app was created as the 8th exercise from IT Academy - Barcelona.
 
-In this app you will be able to see all information about a Star Wars Starship. 
+In this app you will be able to see all information about all Star Wars Starships.
 
 ## Screen shots
 ![starships](./src/assets/screenshots/starships.jpg)
@@ -20,13 +20,19 @@ In this app you will be able to see all information about a Star Wars Starship.
     > `git clorn https://github.com/chaiben/s8-swapp.git`
 2. Access the app directory
     > `cd swapp`
-3. Delete the package-lock.json if present.
 4. Install all 
     >`npm install`
 5. Run
     >`npm start`
 
-## Code Quality
+## How to use
+
+**IMPORTANT! To access some parts of the application you must first Sign Up then Log In with your created user.**
+
+This app save your registration information at your own computer using [localStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage). **(Your information will not be saved at any database)**
+
+## Some metrics
+
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=bugs)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
