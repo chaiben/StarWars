@@ -1,11 +1,11 @@
-import useVisualGuide from "../hook/useVisualGuide";
+import visualGuide from "../functions/visualGuide";
 import Film from "./Film";
 import Pilot from "./Pilot";
 import { useNavigate } from 'react-router-dom';
 
 export default function ViewStarship(props){
   const starship = props.starship ? props.starship : false;
-  const {style} = useVisualGuide(starship.url);
+  const {style} = visualGuide(starship.url);
   const navigate = useNavigate();
   return(
     <div className="container show">

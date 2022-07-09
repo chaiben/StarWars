@@ -312,21 +312,32 @@ nav li:last-child a{
   animation-fill-mode: forwards;
 }
 .startship-el{
-  font-family: starwars5;
-  background-color: #151515;
-  border: 1px solid #151515;
-  padding: 0.5rem 1rem;
-  margin: 1rem auto;
-  opacity: 0;
-  animation-name: show;
+  align-items: center;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+  animation-name: show;
+  background-color: #151515;
+  border: 1px solid #151515;
+  display: flex;
+  font-family: starwars5;
+  gap: 2rem;
+  margin: 1rem auto;
+  opacity: 0;
+  padding: 0.5rem 1rem;
 }
 .startship-el.special{
   opacity: 1;
   animation-name: light-efect;
   animation-duration: 3s;
   animation-fill-mode: none;
+}
+.startship-el .thumbnail{
+  aspect-ratio: 6 / 4;
+  width: 140px;
+  border-radius: 3px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100%;
 }
 .startship-el h3{
   font-size: 1.5rem;

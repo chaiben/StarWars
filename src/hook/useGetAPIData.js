@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import useVisualGuide from "./useVisualGuide";
+import visualGuide from "../functions/visualGuide";
 
 const useGetAPIData = (url) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [response, setResponse] = useState(false);
-  const {imgURL, style} = useVisualGuide(url);
+  const {imgURL, style} = visualGuide(url);
   useEffect(() => {
     setLoading(true);
     axios({

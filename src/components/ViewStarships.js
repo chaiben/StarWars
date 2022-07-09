@@ -1,6 +1,7 @@
 import { useCallback, useRef } from "react";
 import useLocalStorage from "../hook/useLocalStorage";
 import useStarshipFetch from "../hook/useStarshipFetch";
+import visualGuide from "../functions/visualGuide";
 import Loading from "./Loading";
 
 export default function ViewStarships(props){
@@ -28,6 +29,7 @@ export default function ViewStarships(props){
     <div className="container">
     { starships.list && starships.list.map(
     (starship, index) => {
+      const {style} = visualGuide(starship.url);
       let classAux = (index === 1) ? "special" : "";
       if(index === starships.list.length - 1)
         return (
@@ -36,8 +38,11 @@ export default function ViewStarships(props){
           className={`startship-el ${classAux}`} 
           key={`name${index}`} 
           onClick={()=>props.showStarship(starship)} >
-          <h3>{starship.name}</h3>
-          <p>{starship.model}</p>
+          <div className="thumbnail" style={style}></div>
+          <div>
+            <h3>{starship.name}</h3>
+            <p>{starship.model}</p>
+          </div>
         </div>)
       else
         return (
@@ -45,8 +50,11 @@ export default function ViewStarships(props){
             className={`startship-el ${classAux}`} 
             key={`name${index}`} 
             onClick={()=>props.showStarship(starship)} >
-            <h3>{starship.name}</h3>
-            <p>{starship.model}</p>
+            <div className="thumbnail" style={style}></div>
+            <div>
+              <h3>{starship.name}</h3>
+              <p>{starship.model}</p>
+            </div>
           </div>)
     })}
   <div>{starships.loading && <Loading />}</div>
