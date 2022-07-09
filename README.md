@@ -14,67 +14,25 @@ In this app you will be able to see all information about a Star Wars Starship.
 
 ![pilot](./src/assets/screenshots/pilot.jpg)
 
-## Available Scripts
+## How to install
 
-In the project directory, you can run:
+1. Clone this repository 
+    > `git clorn https://github.com/chaiben/s8-swapp.git`
+2. Access the app directory
+    > `cd swapp`
+3. Delete the package-lock.json if present.
+4. Install all 
+    >`npm install`
+5. Run
+    >`npm start`
 
+## Code Quality
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=bugs)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
 
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=chaiben_s8-swapp&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=chaiben_s8-swapp)
