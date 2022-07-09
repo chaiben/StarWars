@@ -10,7 +10,7 @@ export default function useStarshipFetch(pageNumber){
     try {
       const item = window.localStorage.getItem("useStarshipFetch-list");
       return item ? JSON.parse(item) : [];
-    } catch (error) {
+    } catch (e) {
       return [];
     }
   })
