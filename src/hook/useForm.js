@@ -37,15 +37,14 @@ export default function useForm(formName, initialFormData){
     if(value){
       switch (name) {
         case 'email':
-          (value.match(CHECKEMAIL)) ? 
-          errorFormDataAux = {
-            ...errorFormData,
-            [name]: ""
-          } : 
-          errorFormDataAux = {
-            ...errorFormData,
-            [name]: "Invalid email format"
-          }
+          errorFormDataAux = (value.match(CHECKEMAIL)) ? 
+            {
+              ...errorFormData,
+              [name]: ""
+            } : {
+              ...errorFormData,
+              [name]: "Invalid email format"
+            }
           break;
         case 'password':
           errorFormDataAux = (value.match(CHECKPASSWORD2)) ? 
@@ -73,8 +72,8 @@ export default function useForm(formName, initialFormData){
   }
   function validateAllForm(){
     let errorFormDataAux = {}
-    Object.keys(formData).forEach(formName => {
-      const element = document.getElementById(formName);
+    Object.keys(formData).forEach(elementName => {
+      const element = document.getElementById(elementName);
       errorFormDataAux = {
         ...errorFormDataAux,
         ...validFormField(element, false)
@@ -84,8 +83,8 @@ export default function useForm(formName, initialFormData){
     
     // Check if there is any error enabled
     const errorValues = Object.values(errorFormDataAux)
-    for (let i = 0; i < errorValues.length; i++) {
-      if(errorValues[i]){
+    for (let errorValue of errorValues) {
+      if(errorValue){
         return false
       }
     }
