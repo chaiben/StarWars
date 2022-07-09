@@ -33,8 +33,7 @@ export default function SignUpForm(props){
       return
 
     // Check if the email already exist
-    for (let i = 0; i < accounts.length; i++) {
-      const account = accounts[i];
+    for (let account of accounts) {
       if(account.email === formData.email){
         setErrorFormData(
           {

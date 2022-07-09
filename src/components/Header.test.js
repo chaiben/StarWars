@@ -6,7 +6,6 @@ describe('<Header />', () => {
     firstName: "Lorem",
     lastName: "Ipsum",
     email: "lorem.ipsum@dolor.sit",
-    password: "Ddddd1|",
     showPassword: false
   }
 

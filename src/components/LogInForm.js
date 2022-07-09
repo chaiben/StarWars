@@ -31,8 +31,7 @@ export default function LogInForm(props){
       return
 
     // Check user
-    for (let i = 0; i < accounts.length; i++) {
-      const account = accounts[i];
+    for (let account of accounts) {
       if(account.email === formData.email && account.password === formData.password){
         props.setCurrentUser(account);
         setSuccess(account.firstName);
