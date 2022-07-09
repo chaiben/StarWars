@@ -18,7 +18,6 @@ export default function useForm(formName, initialFormData){
   }
 
   function validFormField(element, save){
-    save = (save !== undefined) ? save : true
     const {name, value, required, placeholder} = element;
     let errorFormDataAux = {}
 
@@ -66,7 +65,7 @@ export default function useForm(formName, initialFormData){
           break;
       }
     }
-    if(save === true)
+    if(save !== false)
       setErrorFormData(errorFormDataAux)
   
     return errorFormDataAux;
