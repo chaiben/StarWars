@@ -43,7 +43,7 @@ button:hover{
   cursor: pointer;
 }
 h1, h2, h4, h5, h6{
-  font-family: starwars1, Arial, Helvetica, sans-serif;;
+  font-family: starwars1, Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 header{
@@ -226,7 +226,7 @@ nav li:last-child a{
   justify-content: center;
 }
 .menu{
-  font-family: starwars2, Arial, Helvetica, sans-serif;;
+  font-family: starwars2, Arial, Helvetica, sans-serif;
   font-size: 13px;
   text-transform: uppercase;
   color: #999;
@@ -318,7 +318,7 @@ nav li:last-child a{
   background-color: #151515;
   border: 1px solid #151515;
   display: flex;
-  font-family: starwars5, Arial, Helvetica, sans-serif;;
+  font-family: starwars5, Arial, Helvetica, sans-serif;
   gap: 2rem;
   margin: 1rem auto;
   opacity: 0;
@@ -352,16 +352,16 @@ nav li:last-child a{
   cursor: pointer;
 }
 .starwars2{
-  font-family: starwars2, Arial, Helvetica, sans-serif;;
+  font-family: starwars2, Arial, Helvetica, sans-serif;
 }
 .starwars3{
-  font-family: starwars3, Arial, Helvetica, sans-serif;;
+  font-family: starwars3, Arial, Helvetica, sans-serif;
 }
 .starwars4{
-  font-family: starwars4, Arial, Helvetica, sans-serif;;
+  font-family: starwars4, Arial, Helvetica, sans-serif;
 }
 .starwars5{
-  font-family: starwars5, Arial, Helvetica, sans-serif;;
+  font-family: starwars5, Arial, Helvetica, sans-serif;
 }
 .starship-view{
   display: flex;
@@ -385,7 +385,7 @@ nav li:last-child a{
   background-size: 100%;
 }
 .user{
-  font-family: starwars2, Arial, Helvetica, sans-serif;;
+  font-family: starwars2, Arial, Helvetica, sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   color: #999;
