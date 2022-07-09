@@ -18,15 +18,15 @@ export default function useForm(formName, initialFormData){
   }
 
   function validFormField(element, save){
-    save = save === undefined ? true : save;
     const {name, value, required, placeholder} = element;
     let errorFormDataAux = {}
-    if(required){
-      value!=='' ? 
+
+    if(required && value !==''){
       errorFormDataAux = {
         ...errorFormData,
         [name]: ""
-      } : 
+      } 
+    } else { 
       errorFormDataAux = {
         ...errorFormData,
         [name]: (placeholder) ? 
@@ -66,7 +66,7 @@ export default function useForm(formName, initialFormData){
           break;
       }
     }
-    if(save)
+    if(save === true)
       setErrorFormData(errorFormDataAux)
   
     return errorFormDataAux;
