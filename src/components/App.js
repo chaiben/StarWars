@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import useLocalStorage from '../hook/useLocalStorage';
 import Home from '../page/Home';
 import Starship from '../page/Starship';
-import Styles from '../page/Style';
+import Styles from '../page/Styles';
 import GuardedRoute from './GuardedRoute';
 import Header from './Header';
 import Nav from './Nav';
