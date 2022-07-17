@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/swapp/static/css/main.4d29a723.css",
+    "main.js": "/swapp/static/js/main.2601879d.js",
+    "static/media/r2d2.gif": "/swapp/static/media/r2d2.133e82fe15e74014e0da.gif",
+    "static/media/starship3.gif": "/swapp/static/media/starship3.ba7488fc941b45ea7b64.gif",
+    "static/media/not-found.gif": "/swapp/static/media/not-found.003edd47fd6b26ab86e5.gif",
+    "static/media/sw_logo2.png": "/swapp/static/media/sw_logo2.c38fbfa2470fd5615458.png",
+    "static/media/starwars-font-3.woff": "/swapp/static/media/starwars-font-3.62913ecce4ed7e87d6de.woff",
+    "static/media/starwars-font-5.woff": "/swapp/static/media/starwars-font-5.688e849e5d240d25228d.woff",
+    "static/media/starwars-font-2.woff": "/swapp/static/media/starwars-font-2.066c988a8b22f6b29fe3.woff",
+    "static/media/starwars-font-4.woff": "/swapp/static/media/starwars-font-4.59ab50c658b7b43df2af.woff",
+    "static/media/starwars-font-1.woff": "/swapp/static/media/starwars-font-1.ebf7a0986d2b5f8d3982.woff",
+    "index.html": "/swapp/index.html",
+    "main.4d29a723.css.map": "/swapp/static/css/main.4d29a723.css.map",
+    "main.2601879d.js.map": "/swapp/static/js/main.2601879d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d29a723.css",
+    "static/js/main.2601879d.js"
+  ]
+}
