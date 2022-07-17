@@ -85,7 +85,6 @@ export default function useForm(formName, initialFormData) {
       };
     });
     setErrorFormData(errorFormDataAux);
-    console.log(errorFormData);
 
     // Check if there is any error enabled
     const errorValues = Object.values(errorFormDataAux);
