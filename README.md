@@ -17,7 +17,7 @@ In this app you will be able to see all information about all Star Wars Starship
 ## How to install
 
 1. Clone this repository 
-    > `git clorn https://github.com/chaiben/s8-swapp.git`
+    > `git clone https://github.com/chaiben/s8-swapp.git`
 2. Access the app directory
     > `cd swapp`
 4. Install all 
