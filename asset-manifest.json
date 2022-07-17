@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/s8-swapp/static/css/main.9657a309.css",
-    "main.js": "/s8-swapp/static/js/main.38a61816.js",
+    "main.js": "/s8-swapp/static/js/main.7989f8ee.js",
     "static/media/r2d2.gif": "/s8-swapp/static/media/r2d2.133e82fe15e74014e0da.gif",
     "static/media/starship3.gif": "/s8-swapp/static/media/starship3.ba7488fc941b45ea7b64.gif",
     "static/media/not-found.gif": "/s8-swapp/static/media/not-found.003edd47fd6b26ab86e5.gif",
@@ -13,10 +13,10 @@
     "static/media/starwars-font-1.woff": "/s8-swapp/static/media/starwars-font-1.ebf7a0986d2b5f8d3982.woff",
     "index.html": "/s8-swapp/index.html",
     "main.9657a309.css.map": "/s8-swapp/static/css/main.9657a309.css.map",
-    "main.38a61816.js.map": "/s8-swapp/static/js/main.38a61816.js.map"
+    "main.7989f8ee.js.map": "/s8-swapp/static/js/main.7989f8ee.js.map"
   },
   "entrypoints": [
     "static/css/main.9657a309.css",
-    "static/js/main.38a61816.js"
+    "static/js/main.7989f8ee.js"
   ]
 }
