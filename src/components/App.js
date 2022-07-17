@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { HashRouter, Route, Routes} from 'react-router-dom';
 import useLocalStorage from '../hook/useLocalStorage';
 import Home from '../page/Home';
 import Starship from '../page/Starship';
@@ -12,7 +12,7 @@ const App = () => {
 const [currentUser, setCurrentUser] = useLocalStorage("App-currentUser", false);
 const isAutheticated = (currentUser) ? true : false
 return (
-<BrowserRouter>
+<HashRouter>
     <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
     <Nav />
     <Routes>   
@@ -22,6 +22,6 @@ return (
         <Route path="/styles" element={<Styles />} />
         <Route path="*" element={<div>404</div> } />
     </Routes>
-</BrowserRouter>
+</HashRouter>
 )};
 export default App;
