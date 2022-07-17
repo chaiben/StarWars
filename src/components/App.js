@@ -20,7 +20,7 @@ return (
         <Route path='/starships' element={<GuardedRoute component={Starships} auth={isAutheticated} />}></Route>
         <Route path="/starships/:id" element={<GuardedRoute component={Starship} auth={isAutheticated} />} />
         <Route path="/styles" element={<Styles />} />
-        <Route path="*" element={<div>404</div> } />
+        <Route path="*" element={<Home /> } />
     </Routes>
 </HashRouter>
 )};
