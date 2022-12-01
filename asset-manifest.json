@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/s8-swapp/static/css/main.9657a309.css",
-    "main.js": "/s8-swapp/static/js/main.7989f8ee.js",
-    "static/media/r2d2.gif": "/s8-swapp/static/media/r2d2.133e82fe15e74014e0da.gif",
-    "static/media/starship3.gif": "/s8-swapp/static/media/starship3.ba7488fc941b45ea7b64.gif",
-    "static/media/not-found.gif": "/s8-swapp/static/media/not-found.003edd47fd6b26ab86e5.gif",
-    "static/media/sw_logo2.png": "/s8-swapp/static/media/sw_logo2.c38fbfa2470fd5615458.png",
-    "static/media/starwars-font-3.woff": "/s8-swapp/static/media/starwars-font-3.62913ecce4ed7e87d6de.woff",
-    "static/media/starwars-font-5.woff": "/s8-swapp/static/media/starwars-font-5.688e849e5d240d25228d.woff",
-    "static/media/starwars-font-2.woff": "/s8-swapp/static/media/starwars-font-2.066c988a8b22f6b29fe3.woff",
-    "static/media/starwars-font-4.woff": "/s8-swapp/static/media/starwars-font-4.59ab50c658b7b43df2af.woff",
-    "static/media/starwars-font-1.woff": "/s8-swapp/static/media/starwars-font-1.ebf7a0986d2b5f8d3982.woff",
-    "index.html": "/s8-swapp/index.html",
-    "main.9657a309.css.map": "/s8-swapp/static/css/main.9657a309.css.map",
-    "main.7989f8ee.js.map": "/s8-swapp/static/js/main.7989f8ee.js.map"
+    "main.css": "/StarWars/static/css/main.8ede8e7b.css",
+    "main.js": "/StarWars/static/js/main.ff7b5cf2.js",
+    "static/media/r2d2.gif": "/StarWars/static/media/r2d2.133e82fe15e74014e0da.gif",
+    "static/media/starship3.gif": "/StarWars/static/media/starship3.ba7488fc941b45ea7b64.gif",
+    "static/media/not-found.gif": "/StarWars/static/media/not-found.003edd47fd6b26ab86e5.gif",
+    "static/media/sw_logo2.png": "/StarWars/static/media/sw_logo2.c38fbfa2470fd5615458.png",
+    "static/media/starwars-font-3.woff": "/StarWars/static/media/starwars-font-3.62913ecce4ed7e87d6de.woff",
+    "static/media/starwars-font-5.woff": "/StarWars/static/media/starwars-font-5.688e849e5d240d25228d.woff",
+    "static/media/starwars-font-2.woff": "/StarWars/static/media/starwars-font-2.066c988a8b22f6b29fe3.woff",
+    "static/media/starwars-font-4.woff": "/StarWars/static/media/starwars-font-4.59ab50c658b7b43df2af.woff",
+    "static/media/starwars-font-1.woff": "/StarWars/static/media/starwars-font-1.ebf7a0986d2b5f8d3982.woff",
+    "index.html": "/StarWars/index.html",
+    "main.8ede8e7b.css.map": "/StarWars/static/css/main.8ede8e7b.css.map",
+    "main.ff7b5cf2.js.map": "/StarWars/static/js/main.ff7b5cf2.js.map"
   },
   "entrypoints": [
-    "static/css/main.9657a309.css",
-    "static/js/main.7989f8ee.js"
+    "static/css/main.8ede8e7b.css",
+    "static/js/main.ff7b5cf2.js"
   ]
 }
