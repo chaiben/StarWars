@@ -5,9 +5,9 @@ Star Wars - Starships viewer
 
 This app was created as the 8th exercise from IT Academy - Barcelona.
 
-In this app you will be able to see all information about all Star Wars Starships.
+You will be able to see all information about all Star Wars Starships.
 
-[See it web working](https://chaiben.github.io/StarWars/)
+[Check it out](https://chaiben.github.io/StarWars/)
 
 ## Screen shots
 ![starships](./src/assets/screenshots/starships.jpg)
