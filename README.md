@@ -7,7 +7,7 @@ This app was created as the 8th exercise from IT Academy - Barcelona.
 
 In this app you will be able to see all information about all Star Wars Starships.
 
-[See deployed web here](https://chaiben.github.io/s8-swapp/)
+[See it web working](https://chaiben.github.io/StarWars/)
 
 ## Screen shots
 ![starships](./src/assets/screenshots/starships.jpg)
