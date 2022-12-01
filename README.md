@@ -1,4 +1,4 @@
-# S8. Star Wars - Starships viewer
+Star Wars - Starships viewer
 
 
 ## Description
